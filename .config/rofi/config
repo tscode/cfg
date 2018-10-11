@@ -1,0 +1,6 @@
+
+rofi.combi-modi:	window,run,ssh
+rofi.theme:		solarized
+rofi.font:		Droid Sans Mono 12
+rofi.modi:		combi
+rofi.theme: 		/home/thomas/.config/rofi/themes/Arc.rasi

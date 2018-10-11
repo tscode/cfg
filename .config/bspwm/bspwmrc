@@ -1,0 +1,31 @@
+#! /bin/sh
+
+# Geometry
+bspc config border_width	1
+bspc config window_gap		20
+bspc config top_padding		22
+
+# Colors
+
+# Defaults
+bspc config split_ratio 		0.5
+bspc config borderless_monocle 		true
+bspc config gapless_monocle		true
+bspc config focus_by_distance		true
+bspc config history_aware_focus		true
+bspc config focus_follows_pointer	true
+bspc config pointer_follows_monitor	true
+bspc config auto_cancel			true
+
+# Create default desktops I-IX
+bspc monitor -d I II III IV V VI VII VIII IX
+
+bspc desktop VIII -l monocle
+bspc desktop I -l monocle
+
+echo "DONE!!!!!!!!!!!!"
+
+bspc rule -a Firefox desktop=I
+bspc rule -a Thunderbird desktop=I
+bspc rule -a feh state=floating
+

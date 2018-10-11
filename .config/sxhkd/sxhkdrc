@@ -1,0 +1,52 @@
+
+# Quit bspwm
+super + shift + q
+  bspc quit; pkill -TERM sxhkd
+
+# Close current node
+super + q
+  bspc node -c
+
+# Kill current node
+super + alt + q
+  bspc node -k
+
+# Toggle between floating and tiled
+super + f
+  if [ $(bspc query --nodes --node focused.floating | wc -c) -eq 0 ]; \
+    then bspc node -t floating; \
+    else bspc node -t tiled; \
+  fi
+
+# Cycle through nodes
+super + {_,shift +} space
+  bspc node -f {next,prev}
+
+# Focus or preselect or swap node in direction
+super + {_,alt +, shift +} {n,t,g,r}
+  bspc node -{f,p,s} {west,east,north,south}
+
+# Cancel preselection
+super + x
+  bspc node -p cancel
+
+# Toggle Desktop monocle or floating
+super + shift + m
+  bspc desktop -l next
+
+# Cycle through desktops
+super +{s,d}
+  bspc desktop -f {prev,next}
+
+# Jump to desktop / move node to desktop
+super + {_,shift +} {1-9,0}
+  bspc {desktop -f,node -d} ^{1-9,10}
+
+# Default terminal started in the default directory location
+super + Return
+  if [ -f /tmp/.default_dir ]; then urxvt -cd $(cat /tmp/.default_dir); else urxvt; fi
+
+# Run the rofi launcher
+super + y
+  rofi -show combi
+

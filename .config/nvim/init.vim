@@ -8,6 +8,7 @@ syntax enable       " enable syntax processing
 filetype plugin on
 filetype indent on
 
+
 "
 " spaces and tabs
 "
@@ -47,12 +48,19 @@ set formatoptions=qrn1
 nnoremap <leader>s :setlocal spell! spelllang=en_us<cr>
 
 
+
 "
 " plugins
 "
 call plug#begin('~/.local/share/nvim/plugged')
 
+" utility
 Plug 'tpope/vim-surround'
 Plug 'jremmen/vim-ripgrep'
 
+" colorschemes
+Plug 'noahfrederick/vim-noctu'
+
 call plug#end()
+
+colorscheme noctu

@@ -10,7 +10,7 @@ setxkbmap de neo
 xsetroot -cursor_name left_ptr
 
 # Set background image
-# feh --bg-fil ...
+feh --bg-fil ~/Pictures/wallpapers/arch-simple.png
 
 # Run sxhkd for keybindings
 sxhkd &

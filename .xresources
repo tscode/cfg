@@ -1,36 +1,31 @@
 
 ! Font related stuff
-Xft.dpi:	120
-Xft.autohint:	0
+Xft.dpi:        130
+Xft.autohint:	  0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
 Xft.hinting:  	1
 Xft.antialias:	1
-Xft.rgba:	rgb
-!URxvt.letterSpace: -1
-!URxvt*font: 	xft:Hack:size=9
-URxvt*font: 	xft:Ubuntu Mono:size=10
+Xft.rgba:	      rgb
+URxvt*font: 	  xft:Ubuntu Mono:size=10
+!URxvt*font: 	  xft:Hack:size=9
 
 ! No scroll bar
 URxvt*scrollBar: false
 
 ! Transparency
 URxvt*transparent: true
-URxvt*shading:	   60
-
-! Colors
-URxvt*background: #111111
-URxvt*foreground: #E7E7E7
+URxvt*shading:	   50
 
 ! Not sure what this does
 URxvt*metaSendsEscape: true
 
 ! Make certain keys work with neo and vim
-URxvt*keysym.KP_Add: 		+
+URxvt*keysym.KP_Add: 		    +
 URxvt*keysym.KP_Subtract: 	-
 URxvt*keysym.KP_Multiply: 	*
-URxvt*keysym.KP_Divide: 	/
-URxvt*keysym.KP_Decimal: 	.
+URxvt*keysym.KP_Divide: 	  /
+URxvt*keysym.KP_Decimal: 	  .
 URxvt*keysym.KP_Separator: 	,
 
 URxvt*keysym.KP_1: 1
@@ -43,3 +38,7 @@ URxvt*keysym.KP_7: 7
 URxvt*keysym.KP_8: 8
 URxvt*keysym.KP_9: 9
 URxvt*keysym.KP_0: 0
+
+
+! Colors
+#include ".xcolors"

@@ -34,6 +34,14 @@ super + x
 super + shift + m
   bspc desktop -l next
 
+# Toggle fullscreen
+super + shift + f
+  if [ $(bspc query --nodes --node focused.fullscreen | wc -c) -eq 0 ]; \
+    then bspc node -t fullscreen; \
+    else bspc node -t tiled; \
+  fi
+
+
 # Cycle through desktops
 super +{s,d}
   bspc desktop -f {prev,next}
@@ -49,4 +57,14 @@ super + Return
 # Run the rofi launcher
 super + y
   rofi -show combi
+
+
+# Change display brightness
+XF86MonBrightnessUp
+  xbacklight + 5
+
+XF86MonBrightnessDown
+  if [ $(echo "( `xbacklight` + 0.5)/1" | bc) -ge 10 ]; \
+    then xbacklight -5; \
+  fi
 

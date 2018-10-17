@@ -62,6 +62,9 @@ Plug 'jremmen/vim-ripgrep'
 " colorschemes
 Plug 'noahfrederick/vim-noctu'
 
+" julia syntax
+Plug 'JuliaEditorSupport/julia-vim'
+
 call plug#end()
 
 colorscheme noctu

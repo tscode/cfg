@@ -68,3 +68,11 @@ XF86MonBrightnessDown
     then xbacklight -5; \
   fi
 
+
+# Change audio volume
+XF86Audio{Lower,Raise}Volume
+  amixer -q sset Master 3%{-,+}
+
+XF86AudioMute
+  amixer -q sset Master toggle
+

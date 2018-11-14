@@ -65,6 +65,9 @@ Plug 'noahfrederick/vim-noctu'
 " julia syntax
 Plug 'JuliaEditorSupport/julia-vim'
 
+" latex functionality
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 colorscheme noctu

@@ -49,3 +49,4 @@ PS1='[\u@\h \W]\$  '
 # are essential for me (like GSL.jl) do not work, unfortunately
 export PATH="/opt/julia-1.0.1/bin:$PATH"
 
+#xrandr --output eDP1 --auto --output HDMI2 --auto --right-of eDP1

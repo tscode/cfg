@@ -34,12 +34,21 @@ super + x
 super + shift + m
   bspc desktop -l next
 
+# Send the current node to the current preselection
+super + p
+  bspc node -n newest.!automatic.local
+
+# Swap current with biggest node
+super + g
+  bspc node -s biggest
+
 # Toggle fullscreen
 super + shift + f
   if [ $(bspc query --nodes --node focused.fullscreen | wc -c) -eq 0 ]; \
     then bspc node -t fullscreen; \
     else bspc node -t tiled; \
   fi
+
 
 
 # Cycle through desktops

@@ -5,6 +5,10 @@ bspc config border_width	1
 bspc config window_gap		15
 bspc config top_padding		25
 
+if [ $(monitorconnected DP1-1) ]; then
+  bspc config -m DP1-1 top padding 0
+fi
+
 # Colors
 
 # Defaults
@@ -18,12 +22,28 @@ bspc config pointer_follows_monitor	true
 bspc config auto_cancel			        true
 
 # Create default desktops I-IX
-bspc monitor -d I II III IV V VI VII VIII IX
+if [ $(monitorconnected DP1-1) ]; then
+  bspc monitor eDP1  -d I II III IV V VI VII
+  bspc monitor DP1-1 -d VIII IX X
 
-bspc desktop VIII -l monocle
-bspc desktop I -l monocle
+  bspc desktop IX -l monocle
+  bspc desktop X -l monocle
 
-bspc rule -a Firefox desktop=I
-bspc rule -a Thunderbird desktop=I
+  bspc rule -a Firefox desktop=X
+  bspc rule -a Thunderbird desktop=X
+  bspc rule -a Inkscape desktop=IX
+  bspc rule -a Gimp desktop=IX
+else
+  bspc monitor I II III IV V VI VII VIII IX X
+
+  bspc desktop I -l monocle 
+  bspc desktop X -l monocle 
+
+  bspc rule -a Firefox desktop=I
+  bspc rule -a Thunderbird desktop=I
+  bspc rule -a Inkscape desktop=X
+  bspc rule -a Gimp desktop=X
+
+fi
+
 bspc rule -a feh state=floating
-

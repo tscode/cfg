@@ -10,7 +10,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 
-
 # make some commands like ls and grep use colors
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -47,6 +46,6 @@ PS1='[\u@\h \W]\$  '
 # Path for the current version of the julia programming language
 # Cannot use the arch package, because some julia packages that
 # are essential for me (like GSL.jl) do not work, unfortunately
-export PATH="/opt/julia-1.0.1/bin:$PATH"
+export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
 
 #xrandr --output eDP1 --auto --output HDMI2 --auto --right-of eDP1

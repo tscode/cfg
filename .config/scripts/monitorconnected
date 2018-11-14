@@ -1,0 +1,1 @@
+xrandr | grep -sw "$1 connected" | wc -l

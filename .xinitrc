@@ -14,6 +14,8 @@ setxkbmap de neo
 xrandr --output DP1-1 --auto --right-of eDP1
 # Activate scrolling with trackpoint
 xinput set-prop 11 "libinput Scroll Method Enabled" 0 0 1
+# Automatic screen locking
+xautolock -time 10 -locker physlock &
 
 
 # Set cursor on root window

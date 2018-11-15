@@ -5,11 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec startx
-fi
-
-
 # make some commands like ls and grep use colors
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -49,3 +44,10 @@ PS1='[\u@\h \W]\$  '
 export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
 
 #xrandr --output eDP1 --auto --output HDMI2 --auto --right-of eDP1
+
+# Start the X-Server automatically if I log in on tty1
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  exec startx
+fi
+
+

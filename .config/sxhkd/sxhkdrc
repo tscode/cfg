@@ -67,6 +67,10 @@ super + Return
 super + y
   rofi -show combi
 
+# Run the screen locker
+super + l
+  physlock
+
 
 # Change display brightness
 XF86MonBrightnessUp

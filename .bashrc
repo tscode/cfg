@@ -46,6 +46,7 @@ PS1='[\u@\h \W]\$  '
 # Path for the current version of the julia programming language
 # Cannot use the arch package, because some julia packages that
 # are essential for me (like GSL.jl) do not work, unfortunately
-export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
+#export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
+export PATH="$PATH:$HOME/.config/scripts"
 
 #xrandr --output eDP1 --auto --output HDMI2 --auto --right-of eDP1

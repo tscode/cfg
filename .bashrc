@@ -43,6 +43,10 @@ PS1='[\u@\h \W]\$  '
 # are essential for me (like GSL.jl) do not work, unfortunately
 export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
 
+# Nodejs... I know, I walk down the path to hell...
+PATH="$HOME/.node_modules/bin:$PATH"
+export npm_config_prefix=~/.node_modules
+
 #xrandr --output eDP1 --auto --output HDMI2 --auto --right-of eDP1
 
 # Start the X-Server automatically if I log in on tty1

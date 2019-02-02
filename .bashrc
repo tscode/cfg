@@ -51,4 +51,5 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec startx
 fi
 
-
+# Preventing suspend when lid is closed
+#systemd-inhibit --what=handle-lid-switch sleep 2h

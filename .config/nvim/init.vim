@@ -48,6 +48,16 @@ set formatoptions=qrn1
 
 nnoremap <leader>s :setlocal spell! spelllang=en_us<cr>
 
+"
+" buffers
+"
+
+" switch to next buffer with tab and previous with shift+tab
+nnoremap <tab> :bnext<cr>
+nnoremap <s-tab> :bprevious<cr>
+
+" cycle between two last used buffers
+nnoremap <leader><leader> <c-^>
 
 
 "

@@ -36,7 +36,7 @@ super + shift + m
 
 # Send the current node to the current preselection
 super + p
-  bspc node -n newest.!automatic.local
+  bspc node -n newest.\!automatic.local
 
 # Swap current with biggest node
 super + g

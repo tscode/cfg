@@ -1,8 +1,6 @@
 [general]
 status_path = "~/.config/vdirsyncer/status/"
 
-
-
 [pair calendar_local_posteo]
 a = "local_calendars"
 b = "posteo_calendars"

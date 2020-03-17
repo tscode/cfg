@@ -61,7 +61,7 @@ super + {_,shift +} {1-9,0}
 
 # Default terminal started in the default directory location
 super + Return
-  if [ -f /tmp/.default_dir ]; then urxvt -cd $(cat /tmp/.default_dir); else urxvt; fi
+  if [ -f /tmp/.default_dir ]; then kitty -d $(cat /tmp/.default_dir); else kitty; fi
 
 # Run the rofi launcher
 super + y

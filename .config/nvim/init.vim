@@ -53,11 +53,21 @@ nnoremap <leader>s :setlocal spell! spelllang=en_us<cr>
 "
 
 " switch to next buffer with tab and previous with shift+tab
-nnoremap <tab> :bnext<cr>
-nnoremap <s-tab> :bprevious<cr>
+nnoremap <leader><tab> :bnext<cr>
+nnoremap <leader><s-tab> :bprevious<cr>
 
 " cycle between two last used buffers
 nnoremap <leader><leader> <c-^>
+
+" use tab for omnicomplete
+inoremap <tab> <c-x><c-o>
+
+"
+" ocaml support
+"
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:syntastic_ocaml_checkers = ['merlin']
 
 
 "
@@ -71,13 +81,32 @@ Plug 'jremmen/vim-ripgrep'
 
 " colorschemes
 Plug 'noahfrederick/vim-noctu'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'joshdick/onedark.vim'
+
+" status line
+Plug 'itchyny/lightline.vim'
 
 " julia syntax
 Plug 'JuliaEditorSupport/julia-vim'
+
+"advanced syntax checking
+Plug 'vim-syntastic/syntastic'
 
 " latex functionality
 Plug 'lervag/vimtex'
 
 call plug#end()
 
-colorscheme noctu
+
+"
+" colors
+"
+set termguicolors
+set noshowmode   " not needed due to lightline
+"set background dark
+
+colorscheme palenight
+let g:palenight_terminal_italics=1
+let g:lightline = { 'colorscheme': 'onedark' }
+

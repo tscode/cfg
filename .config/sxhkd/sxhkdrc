@@ -36,7 +36,7 @@ super + shift + m
 
 # Send the current node to the current preselection
 super + p
-  bspc node -n newest.!automatic.local
+  bspc node -n newest.\!automatic.local
 
 # Swap current with biggest node
 super + g
@@ -61,7 +61,7 @@ super + {_,shift +} {1-9,0}
 
 # Default terminal started in the default directory location
 super + Return
-  if [ -f /tmp/.default_dir ]; then urxvt -cd $(cat /tmp/.default_dir); else urxvt; fi
+  if [ -f /tmp/.default_dir ]; then kitty -d $(cat /tmp/.default_dir); else kitty; fi
 
 # Run the rofi launcher
 super + y

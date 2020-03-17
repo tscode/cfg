@@ -41,7 +41,8 @@ PS1='[\u@\h \W]\$  '
 # Path for the current version of the julia programming language
 # Cannot use the arch package, because some julia packages that
 # are essential for me (like GSL.jl) do not work, unfortunately
-export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
+#export PATH="/opt/julia-1.0.1/bin:$PATH:$HOME/.config/scripts"
+export PATH="$PATH:$HOME/.config/scripts"
 
 # Nodejs... I know, I walk down the path to hell...
 PATH="$HOME/.node_modules/bin:$PATH"
@@ -54,4 +55,5 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec startx
 fi
 
-
+# Preventing suspend when lid is closed
+#systemd-inhibit --what=handle-lid-switch sleep 2h

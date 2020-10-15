@@ -57,3 +57,8 @@ fi
 
 # Preventing suspend when lid is closed
 #systemd-inhibit --what=handle-lid-switch sleep 2h
+
+function wacomsetup {
+  xsetwacom set "Wacom Intuos BT M Pen stylus" Area 0 0 21600 12150
+  xsetwacom set "Wacom Intuos BT M Pen stylus" MapToOutput "eDP-1"
+}
